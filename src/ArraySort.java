@@ -32,6 +32,8 @@ public class ArraySort {
 	}
 	
 	public static void printArray(int m[][]){
-		
+		for(int i = 0;i < m.length;i++){
+			System.out.println(m[i][0]+","+m[i][1]);
+		}
 	}
 }
