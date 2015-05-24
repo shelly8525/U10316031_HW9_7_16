@@ -9,40 +9,22 @@ public class ArraySort {
 	}
 	
 	public static void sort(int m[][]){
-		for(int i = 0;i < m.length;i++){
-			if(m[i][0] > m[i+1][0]){
-				int temp[] = m[i];
-				m[i+1] = m[i];
-				m[i+1] = temp;
-			}	
-				for(int j = 0;j < m.length;j++){
-					if(m[j][1] > m[j+1][1]){
-						int temp1[] = m[j];
-						m[j] = m[j+1];
-						temp1 = m[j+1];
+		for(int a = 1;a < m.length;a++){
+			for(int i = 0;i < m.length-1;i++){
+				if(m[i][0] > m[i+1][0]){
+					int temp[] = m[i];
+					m[i] = m[i+1];
+					m[i+1] = temp;
+				}	
+					
+					if(m[i][1] > m[i+1][1] && m[i][0] == m[i+1][0]){
+						int temp1[] = m[i];
+						m[i] = m[i+1];
+						m[i+1] = temp1;
 					}
-				}
-		}
-		/*for(int i = 0;i < m.length;i++){
-			double currentMin = m[i][0];
-			int currentMinIndex = i;
-			
-			for(int j = 0;j < m.length;j++){
-				if(currentMin > m[j][0] || (currentMin == m[j][0] && m[currentMinIndex][1] > m[j][1])){
-					currentMin = m[j][0];
-			        currentMinIndex = j;
-				}
+					
 			}
-			
-			if (currentMinIndex != i) {
-		        int temp0 = m[currentMinIndex][0];
-		        int temp1 = m[currentMinIndex][1];
-		        m[currentMinIndex][0] = m[i][0];
-		        m[currentMinIndex][1] = m[i][1];
-		        m[i][0] = temp0;
-		        m[i][1] = temp1;
-		  }
-		}*/
+		}
 	}
 	
 	public static void printArray(int m[][]){
