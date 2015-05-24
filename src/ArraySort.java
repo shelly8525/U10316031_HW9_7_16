@@ -10,6 +10,20 @@ public class ArraySort {
 	
 	public static void sort(int m[][]){
 		for(int i = 0;i < m.length;i++){
+			if(m[i][0] > m[i+1][0]){
+				int temp[] = m[i];
+				m[i+1] = m[i];
+				m[i+1] = temp;
+			}	
+				for(int j = 0;j < m.length;j++){
+					if(m[j][1] > m[j+1][1]){
+						int temp1[] = m[j];
+						m[j] = m[j+1];
+						temp1 = m[j+1];
+					}
+				}
+		}
+		/*for(int i = 0;i < m.length;i++){
 			double currentMin = m[i][0];
 			int currentMinIndex = i;
 			
@@ -28,7 +42,7 @@ public class ArraySort {
 		        m[i][0] = temp0;
 		        m[i][1] = temp1;
 		  }
-		}
+		}*/
 	}
 	
 	public static void printArray(int m[][]){
